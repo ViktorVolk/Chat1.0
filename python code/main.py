@@ -100,5 +100,4 @@ pprint(response)
 print()
 after = response[-1]['time']
 
-#  raw_input()
 
