@@ -4,16 +4,7 @@ import time
 
 app = Flask(__name__)
 messages = [
-    {
-        'name': 'Jack',
-        'text': 'Привет всем, я Jack',
-        'time': 1614887855.3456457,
-    },
-    {
-        'name': 'Mary',
-        'text': 'Привет Jack, я - Mary',
-        'time': 1614887857.3456457,
-    }
+
 ]
 
 
@@ -33,7 +24,7 @@ def status():
 
 
 @app.route("/send", methods=['POST'])
-def send_message(): # Метод для отправки сообщений
+def send_message(): #Метод для отправки сообщений
     data = request.json  # Позволяет возвращать то, что пользователь нам передал
     if not isinstance(data, dict):
         return abort(400)
@@ -60,7 +51,7 @@ def send_message(): # Метод для отправки сообщений
 
 
 @app.route("/messages")
-def get_messages():  # Метод для получения сообщения
+def get_messages():  #Метод для получения сообщения
     try:
         after = float((request.args['after']))
     except:

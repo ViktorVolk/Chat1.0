@@ -7,10 +7,10 @@ import requests
 # print(response.text)
 # print(response.json()['name'])
 
-name = input("Введите имя: ")
+name = "Name" #input("Введите имя: ")
 
 while True:
-    text = input()
+    text = "deedere" #input()
 
     response = requests.post(
         'http://127.0.0.1:5000/send',
