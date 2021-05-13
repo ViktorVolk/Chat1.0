@@ -1,7 +1,7 @@
 from datetime import datetime
 
 import requests
-from PyQt5 import QtWidgets, QtCore
+from PyQt6 import QtWidgets, QtCore
 from clientui import Ui_MainWindow
 
 
@@ -56,7 +56,8 @@ class Messenger(QtWidgets.QMainWindow, Ui_MainWindow):
             return
 
         if response.status_code != 200:
-            self.textBrowser.append('Имя и текст не должны быть пустыми. Текст <= 1000 символов.')
+            self.textBrowser.append('Error')
+            self.textBrowser.append('Имя и текст не могут быть пустыми')
             self.textBrowser.append('')
             return
 
@@ -64,6 +65,6 @@ class Messenger(QtWidgets.QMainWindow, Ui_MainWindow):
 
 
 app = QtWidgets.QApplication([])
-window = Messenger()  # host, e.g. '57e5c0b0c7d6.ngrok.io'
+window = Messenger('87e9f81be18f.ngrok.io')
 window.show()
 app.exec()
