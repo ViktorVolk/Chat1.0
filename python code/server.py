@@ -3,9 +3,7 @@ from datetime import datetime
 import time
 
 app = Flask(__name__)
-messages = [
-
-]
+messages = []
 
 
 @app.route("/")
@@ -24,7 +22,7 @@ def status():
 
 
 @app.route("/send", methods=['POST'])
-def send_message(): #Метод для отправки сообщений
+def send_message():  # Метод для отправки сообщений
     data = request.json  # Позволяет возвращать то, что пользователь нам передал
     if not isinstance(data, dict):
         return abort(400)

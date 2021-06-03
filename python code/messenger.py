@@ -14,7 +14,7 @@ class Messenger(QtWidgets.QMainWindow, Ui_MainWindow):
 
         self.pushButton.pressed.connect(self.send_message)
 
-        self.after = 0
+        self.after = 2
         self.timer = QtCore.QTimer()
         self.timer.timeout.connect(self.get_messages)
         self.timer.start(1000)
@@ -64,7 +64,8 @@ class Messenger(QtWidgets.QMainWindow, Ui_MainWindow):
         self.textEdit.clear()
 
 
+hostname = input()
 app = QtWidgets.QApplication([])
-window = Messenger('87e9f81be18f.ngrok.io')
+window = Messenger(hostname)
 window.show()
 app.exec()
